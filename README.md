@@ -8,7 +8,7 @@ Designed to be used together with the [coloros-esim](https://github.com/GlwFin/c
 
 | Item | Value |
 |---|---|
-| Device | OnePlus Ace5 Ultimate (MT6991 / Dimensity 9400e) |
+| Device | OnePlus Ace5 Ultra (MT6991 / Dimensity 9400e) |
 | System | ColorOS 16 (China) |
 
 ## Scope
