@@ -4,16 +4,11 @@ LSPosed module that makes ColorOS treat a pluggable eUICC card slot as a built-i
 
 Designed to be used together with the [coloros-esim](https://github.com/GlwFin/coloros-esim) KernelSU module to enable native eSIM settings on China ColorOS.
 
-## Tested on
-
-| Item | Value |
-|---|---|
-| Device | OnePlus Ace5 Ultra (MT6991 / Dimensity 9400e) |
-| System | ColorOS 16 (China) |
-
 ## Scope
 
 `com.android.phone`
+
+The eUICC card must be inserted in **slot 2** (the second card slot, `TARGET_SLOT = 1` in code).
 
 ## How it works
 
