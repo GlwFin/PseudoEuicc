@@ -20,8 +20,6 @@ This module hooks `UiccSlot` and `UiccController` at runtime to:
 - Retrieve the real EID from the modem layer (EuiccCard / EuiccPort / TelephonyManager) and fill `mEid` on demand
 - Fix `getCardIdForDefaultEuicc` so the framework resolves the correct public card ID
 
-No configuration, no UI — install, enable the module scope, reboot.
-
 ## Build
 
 ```
