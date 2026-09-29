@@ -263,30 +263,6 @@ public class Main implements IXposedHookLoadPackage {
                 }
             });
 
-
-            // 第 3 层接管：hook InternalDependency 的 GPIO 接口，
-            // 绕过 HAL，让框架直接看到"eSIM 硬件开关 = 开"
-            try {
-                final Class<?> idClass = XposedHelpers.findClass(
-                        "com.oplus.internal.InternalDependency",
-                        lpparam.classLoader);
-                hookAllMethods(idClass, "getEsimGpio", new XC_MethodHook() {
-                    @Override
-                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                        param.setResult(Integer.valueOf(1));
-                    }
-                });
-                hookAllMethods(idClass, "setEsimGpio", new XC_MethodHook() {
-                    @Override
-                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                        // 拦截写操作，不做任何事
-                    }
-                });
-                log("InternalDependency getEsimGpio/setEsimGpio hooked");
-            } catch (Throwable t) {
-                log("InternalDependency hook err: " + t);
-            }
-
             hookAllMethods(uiccCtrl, "isBuiltInEuiccSlot", new XC_MethodHook() {
                 @Override
                 protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
